@@ -97,7 +97,7 @@ public class Lexer {
 				}
 				else
 				{
-					token = new IdToken(lineNo , m)
+					token = new IdToken(lineNo , m);
 				}
 				queue.add(token);
 			}
@@ -123,6 +123,42 @@ public class Lexer {
 			sb.append(c);
 		}
 		return sb.toString();
+	}
+	
+	protected static class NumToken extends Token {
+		private int value;
+		
+		protected NumToken(int line , int v) {
+			super(line);
+			value = v;
+		}
+		
+		public boolean isNumber() { return true; }
+		public String getText() { return Integer.toString(value); }
+		public int getNumber() { return value; }
+		
+	}
+	
+	protected static class IdToken extends Token {
+		private String text;
+		protected IdToken(int line , String id) {
+			super(line);
+			text = id;
+		}
+		public boolean isIdentifier() { return true; }
+		public String getText() { return text; }	
+	}
+	
+	protected static class StrToken extends Token {
+		private String literal;
+		
+		StrToken(int line , String str) {
+			super(line);
+			literal = str;
+		}
+		
+		public boolean isString() { return true; }
+		public String getText() { return literal; }
 	}
 	
 }

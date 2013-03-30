@@ -1,8 +1,7 @@
 package stone.ast;
+import java.util.List;
 
-import stone.Token;
-
-public class BinaryExpr extends ASTLeaf {
+public class BinaryExpr extends ASTList {
     public BinaryExpr(List<ASTree> c ) { super(c); }
     public ASTree left() { return child(0); }
     public String operator() {

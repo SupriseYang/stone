@@ -1,11 +1,7 @@
 package stone;
 
-import java.io.IOException;
-import java.io.Reader;
-
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
+import java.io.*;
 
 public class CodeDialog extends Reader {
 	private String buffer = null;
@@ -14,11 +10,10 @@ public class CodeDialog extends Reader {
 	@Override
 	public int read(char[] cbuf, int off, int len) throws IOException {
 		if (buffer == null) {
-			String in = showDialg();
-			if (in == null) {
+			String in = showDialog();
+			if (in == null)
 				return -1;
-			}
-			else 
+			else
 			{
 				print(in);
 				buffer = in + "\n";
@@ -51,13 +46,19 @@ public class CodeDialog extends Reader {
 													JOptionPane.OK_CANCEL_OPTION,
 													JOptionPane.PLAIN_MESSAGE,
 													null,null,null);
-		if(result == JOptionPane.OK_OPTION){
+		if(result == JOptionPane.OK_OPTION)
 			return area.getText();
-		}
 		else
-		{
 			return null;
-		}
 	}
+
+    public static Reader file() throws FileNotFoundException {
+        JFileChooser chooser = new JFileChooser();
+
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            return new BufferedReader(new FileReader(chooser.getSelectedFile()));
+        else
+            throw new FileNotFoundException("no file specified");
+    }
 		
 }

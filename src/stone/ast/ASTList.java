@@ -7,13 +7,13 @@ public class ASTList extends ASTree {
     protected List<ASTree> children;
     public ASTList(List<ASTree> list) { children = list; }
     public ASTree child(int i) { return children.get(i); }
-    public int numChildren() { return chiildren.size(); }
+    public int numChildren() { return children.size(); }
     public Iterator<ASTree> children() { return children.iterator(); }
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append('(');
-        Stirng sep = "";
+        String sep = "";
         for (ASTree t: children ) {
             builder.append(sep);
             sep = " ";
@@ -25,9 +25,8 @@ public class ASTList extends ASTree {
     public String location() {
         for (ASTree t: children) {
             String s = t.location();
-            if ( s != null) {
+            if ( s != null)
                 return s;
-            }
         }
         return null;
     }

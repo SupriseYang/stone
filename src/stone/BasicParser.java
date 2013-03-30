@@ -1,10 +1,13 @@
 package stone;
+/*
+
 import static stone.Parser.rule;
 import java.util.HashSet;
 import stone.Parser.Operators;
 import stone.ast.*;
-
+*/
 public class BasicParser {
+    /*
     HashSet<String> reserved = new HashSet<String>();
     Operators operators = new Operators();
     Parser expr0 = rule();
@@ -54,4 +57,5 @@ public class BasicParser {
     public ASTree parse(Lexer lexer) throws ParseException {
         return program.parse(lexer);
     }
+    */
 }

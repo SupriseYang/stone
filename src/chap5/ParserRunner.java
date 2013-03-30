@@ -1,8 +1,6 @@
 package chap5;
-import stone.ast.ASTree;
-import stone.*;
-
 public class ParserRunner {
+/*
     public static void main(String[] args) throws ParseException {
         Lexer l = new Lexer( new CodeDialog() );
         BasicParser bp = new BasicParser();
@@ -11,4 +9,5 @@ public class ParserRunner {
             System.out.println("=> " + ast.toString());
         }
     }
+    */
 }

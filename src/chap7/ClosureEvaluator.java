@@ -10,7 +10,7 @@ import java.util.List;
 
 @Require(FuncEvaluator.class)
 @Reviser
-public class ClosuerEvaluator {
+public class ClosureEvaluator {
     @Reviser
     public static class FunEx extends Fun {
         public FunEx(List<ASTree> c) { super(c); }

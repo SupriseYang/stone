@@ -4,7 +4,7 @@ import javassist.gluonj.util.Loader;
 
 public class ClosureRunner {
     public static void main(String[] args) throws Throwable {
-        Loader.run(ClosuerInterpreter.class, args,ClosuerEvaluator.class);
+        Loader.run(ClosureInterpreter.class, args, ClosureEvaluator.class);
     }
 
 }
